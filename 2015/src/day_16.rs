@@ -26,36 +26,40 @@ perfumes: 1";
 }
 
 #[aoc(day16, part1)]
-pub fn part1(input: &str) -> String {
+pub fn part1(input: &str) -> i32 {
     let values = generate_values();
     let reg = Regex::new("(\\w+): (\\d+)").unwrap();
-    let mut possible: Vec<&str> = input.lines().collect();
-    possible = possible
-        .into_iter()
-        .filter(|line| {
-            reg.captures_iter(line)
-                .all(|x| x[2].parse::<i32>().unwrap() == values[&x[1]])
-        })
-        .collect();
+    let mut possible = input.lines().filter(|line| {
+        reg.captures_iter(line)
+            .all(|x| x[2].parse::<i32>().unwrap() == values[&x[1]])
+    });
 
-    possible.join("\r\n")
+    possible
+        .next()
+        .unwrap()
+        .replace(':', "")
+        .split(' ')
+        .find_map(|x| x.parse().ok())
+        .unwrap()
 }
 
 #[aoc(day16, part2)]
-pub fn part2(input: &str) -> String {
+pub fn part2(input: &str) -> i32 {
     let values = generate_values();
     let reg = Regex::new("(\\w+): (\\d+)").unwrap();
-    let mut possible: Vec<&str> = input.lines().collect();
-    possible = possible
-        .into_iter()
-        .filter(|line| {
-            reg.captures_iter(line).all(|x| match &x[1] {
-                "cats" | "trees" => x[2].parse::<i32>().unwrap() > values[&x[1]],
-                "pomeranians" | "goldfish" => x[2].parse::<i32>().unwrap() < values[&x[1]],
-                _ => x[2].parse::<i32>().unwrap() == values[&x[1]],
-            })
+    let mut possible = input.lines().filter(|line| {
+        reg.captures_iter(line).all(|x| match &x[1] {
+            "cats" | "trees" => x[2].parse::<i32>().unwrap() > values[&x[1]],
+            "pomeranians" | "goldfish" => x[2].parse::<i32>().unwrap() < values[&x[1]],
+            _ => x[2].parse::<i32>().unwrap() == values[&x[1]],
         })
-        .collect();
+    });
 
-    possible.join("\r\n")
+    possible
+        .next()
+        .unwrap()
+        .replace(':', "")
+        .split(' ')
+        .find_map(|x| x.parse().ok())
+        .unwrap()
 }
