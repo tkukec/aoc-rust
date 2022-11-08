@@ -1,5 +1,5 @@
 #![feature(array_windows)]
-
+#![feature(slice_group_by)]
 mod day_01;
 mod day_02;
 mod day_03;
@@ -15,6 +15,16 @@ mod day_12;
 mod day_13;
 mod day_14;
 mod day_15;
+mod day_16;
+mod day_17;
+mod day_18;
+mod day_19;
+mod day_20;
+mod day_21;
+mod day_22;
+mod day_23;
+mod day_24;
+mod day_25;
 
 extern crate aoc_runner;
 
