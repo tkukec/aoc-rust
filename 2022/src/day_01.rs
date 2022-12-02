@@ -18,3 +18,12 @@ pub fn part2(input: &str) -> u32 {
     all.sort();
     all.pop().unwrap() + all.pop().unwrap() + all.pop().unwrap()
 }
+
+#[aoc(day01, part1, better)]
+pub fn part1_better(input: &str) -> u32 {
+    input
+        .split("\n\n")
+        .map(|group| group.lines().map(|x| x.parse::<u32>().unwrap()).sum())
+        .max()
+        .unwrap()
+}

@@ -1,11 +1,12 @@
 use crate::generators::*;
 use crate::spatial::*;
-#[aoc(dayX, part1)]
+
+#[aoc(day03, part1)]
 pub fn part1(input: &str) -> i32 {
     todo!()
 }
 
-#[aoc(dayX, part2)]
+#[aoc(day03, part2)]
 pub fn part2(input: &str) -> i32 {
     todo!()
 }
