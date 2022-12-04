@@ -28,7 +28,7 @@ cargo aoc -d <day>
 
 2021 - ★★★★★★★★★★★★★★★★★★★★★★★★★ [^2]
 
-2022 - ★★★
+2022 - ★★★★
 
 [^1]: 2020 was solved in Python, and is not included in this repo
 [^2]: 2021 was solved in Kotlin, and is not included in this repo
