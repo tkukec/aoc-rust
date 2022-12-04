@@ -1,6 +1,7 @@
 # Advent of Code
-My solutions for Advent of Code, written in Rust
+My solutions for Advent of Code, written in Rust. 
 
+### ❗❗❗ This repo will no longer be updated. Please go to https://git.sr.ht/~toni/AoC for new solutions.
 # Test puzzles
 I use [cargo-aoc](https://lib.rs/crates/cargo-aoc) for automatically downloading input and handling other things like tests, benchmarks and generator functions. You can install it with `cargo install cargo-aoc`.
 
